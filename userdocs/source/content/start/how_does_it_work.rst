@@ -52,13 +52,13 @@
 
 
 .. |02| image:: ../../img/start/01.png
-   :scale: 80 %
+   :scale: 65 %
 
 .. |01| image:: ../../img/start/02.png
-   :scale: 50 %
+   :scale: 65 %
 
 .. |03| image:: ../../img/start/03.png
-   :scale: 80 %
+   :scale: 65 %
 
 .. |04| image:: ../../img/start/04.png
-   :scale: 80 %
+   :scale: 65 %
