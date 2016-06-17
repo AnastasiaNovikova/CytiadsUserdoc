@@ -32,6 +32,7 @@
    :caption: Начало работы
 
    content/start/start_common.rst
+   content/start/how_does_it_work.rst
    content/offers/conversion.rst
    content/start/interface_overview.rst
    
