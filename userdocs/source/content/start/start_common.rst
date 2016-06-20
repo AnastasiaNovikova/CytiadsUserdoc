@@ -19,7 +19,7 @@
 
 .. image:: ../../img/start/city_n_webmaster.png
    :scale: 100 %
-   :align: center
+   :align: middle
    :alt: иерархическая структура сра
 
 Партнерская сеть
