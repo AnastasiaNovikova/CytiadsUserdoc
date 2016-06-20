@@ -19,7 +19,6 @@
 
 .. image:: ../../img/start/city_n_webmaster.png
    :scale: 100 %
-   :align: middle
    :alt: иерархическая структура сра
 
 Партнерская сеть
@@ -37,7 +36,6 @@
 
 .. image:: ../../img/start/cpa_cpi.png
    :scale: 100 %
-   :align: center
    :alt: иерархическая структура сра
 
 CPS (англ. Cost Per Salе)
