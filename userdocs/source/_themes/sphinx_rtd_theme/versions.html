@@ -1,23 +1,15 @@
- <!--   {% if READTHEDOCS %}
+{% if READTHEDOCS %}
     <label>
-      {{ current_version }}
+      {{language}}
       <div class="dropdown__button"></div>
       <input class="dropdown__checkbox" type="checkbox">
       <div class="dropdown__menu">
-          {{ current_language }}
-          test </br>
-          v: {{ current_version }}
-          {% for slug, url in versions %}
-            <a href="{{ url }}">{{ slug }}</a>
-          {% endfor %}
-          {% if translations %}
-            deldel
-          {% endif %}
+        <a href="/docs/udocs/ru/latest/">ru</a>
+        <a href="/docs/udocs/en/latest/">en</a>
       </div>
     </label>
-   <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/?fromdocs={{ slug }}">Project Home</a>
-    {% endif %} -->
-
+{% endif %}
+<!--
 {% if READTHEDOCS %}
 {# Add rst-badge after rst-versions for small badge style. #}
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -54,3 +46,4 @@
     </div>
   </div>
 {% endif %}
+-->
