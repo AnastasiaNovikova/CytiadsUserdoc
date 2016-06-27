@@ -82,4 +82,4 @@
 
 * :ref:`genindex`
 
-.. |support| unocode:: U+1F3A7
+.. |support| unicode:: U+1F3A7
