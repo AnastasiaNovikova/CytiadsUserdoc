@@ -124,8 +124,8 @@ Deep link
 
 То есть все, что вам понадобится, чтобы пометить два разных источника трафика  в нашей сети, это добавить к каждому их них уникальный субаккаунт, например:
 
-#. Для своей ссылки в блоге вы можете добавить такую метку: ``https://coollink.com/strangeSymbolsHere?sa=blog``
-#. А для фейсбука ту же самую партнерскую ссылку с другим значением субаккаунта: ``https://coollink.com/strangeSymbolsHere?sa=facebook``
+#. Для своей ссылки в блоге вы можете добавить такую метку: ``https://cityadspix.com/strangeSymbolsHere?sa=blog``
+#. А для фейсбука ту же самую партнерскую ссылку с другим значением субаккаунта: ``https://cityadspix.com/strangeSymbolsHere?sa=facebook``
 
 ************************
 Субаккаунт в интерфейсе
@@ -148,12 +148,21 @@ Deep link
    
    .. code::
 
-      https://coollink.com/strangeSymbolsHere?sa=blog
-      https://coollink.com/strangeSymbolsHere?sa=facebook
-      https://coollink.com/strangeSymbolsHere?sa=my_site
-      https://coollink.com/strangeSymbolsHere?sa=odnoklassniki и так далее...
+      https://cityadspix.com/strangeSymbolsHere?sa=blog
+      https://cityadspix.com/strangeSymbolsHere?sa=facebook
+      https://cityadspix.com/strangeSymbolsHere?sa=my_site
+      https://cityadspix.com/strangeSymbolsHere?sa=odnoklassniki и так далее...
 
+***********************
+Субаккаунт в статистике
+***********************
 
+.. seealso::
+
+   * Подробности о :ref:`Статистике <>`.
+   * Вы можете учитывать ваши субаккаунты в API (например, метод ``GetOrderStat``) или в :ref:`ConversionPostback <conversion-postback>`.
+
+Ради чего вы старались и вписывали свои субаккаунты в партнерские ссылки? Чтобы отследить трафик и контролировать источники и конверсии. Все это можно делать в нашей **Статистике**. Выберите отчет menuselection:` Статистика | Субаккаунты`. В этом отчете будет весь ваш трафик, сгруппированный по субаккаунтам, который вы приписывали к партнерским ссылкам.
 
 .. |02| image:: ../../img/start/01.png
    :scale: 65 %
