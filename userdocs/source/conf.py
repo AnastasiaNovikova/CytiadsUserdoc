@@ -294,7 +294,7 @@ texinfo_documents = [
 
 #-------------------------------------------------GLOBAL SUBSTITUTION---------------------------------------------
 rst_epilog = """
-.. |support| image:: /img/c-ads_userdocs_support_icon.png
+.. |support| image:: /img/c-ads_userdocs_support_icon_v02.png
 .. _support: https://help.cityads.com/hc/ru/requests/new
 .. |br| raw:: html
 
