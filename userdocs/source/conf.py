@@ -296,8 +296,7 @@ texinfo_documents = [
 rst_epilog = """
 .. |support| image:: /img/c-ads_userdocs_support_icon.png
 .. _support: https://help.cityads.com/hc/ru/requests/new
+.. |br| raw:: html
+
+   <br />
 """
-# 
-# .. |br| raw:: html
-#
-#  <br />
