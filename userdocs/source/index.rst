@@ -30,8 +30,8 @@
    :caption: Начало работы
 
    content/start/start_common.rst
-   content/start/how_does_it_work.rst
    content/offers/conversion.rst
+   content/start/how_does_it_work.rst
    content/start/interface_overview.rst
    
 .. toctree::
@@ -41,6 +41,7 @@
    content/account/account_face.rst
    content/account/finance.rst
    content/account/agent_cabinet.rst
+   content/account/commission.rst
    
 .. toctree::
    :maxdepth: 2
