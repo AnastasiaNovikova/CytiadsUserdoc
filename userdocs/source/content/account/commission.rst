@@ -38,4 +38,4 @@
 
 
 .. |circle| image:: ../../img/account/finance/circle.png
-.. |bublic| image:: ../../img/account/bublic.png
+.. |bublic| image:: ../../img/account/finance/bublic.png
