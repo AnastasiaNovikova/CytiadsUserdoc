@@ -21,16 +21,22 @@
 
 Для тех, кто не знает, что ищет, мы собрали раздел :ref:`faq-section-label`. Самые популярные грабли можно найти в разделе :ref:`known_issues-section-label`. А в :ref:`Соглашениях<agreement-section-label>` есть ссылки на разные юридические документы, которые вступают в силу, если вы сотрудничаете с этой партнерской сетью.
 
-Эту документацию можно читать от начала до конца, если у вас есть столько свободного времени :), но мы рекомендуем пользоваться поиском.
+Эту документацию можно читать от начала до конца, если у вас есть столько свободного времени :), но мы рекомендуем пользоваться **Поиском**.
 
 Содеражание:
 ************
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Теория 
+
+   content/start/start_common.rst
+   content/offers/conversion.rst
+
 .. toctree::
    :maxdepth: 3
    :caption: Начало работы
 
-   content/start/start_common.rst
-   content/offers/conversion.rst
    content/start/how_does_it_work.rst
    content/start/interface_overview.rst
    
