@@ -43,7 +43,7 @@ Live Product Base
 Страница GetLink
 **********************
 
-На панели слева вы выбираете **Big Data / GetLink**.
+На панели слева вы выбираете **Big Data | GetLink**.
 
 .. figure:: ../../img/instruments/getlink_overview.png
        :scale: 100 %
