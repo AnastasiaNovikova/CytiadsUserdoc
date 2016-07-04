@@ -56,13 +56,14 @@
    content/offers/offers_face.rst
    content/offers/offers_interface.rst
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Статистика
   
-   content/statistics/statistics_face.rst
-   content/statistics/different_reports.rst 
+   content/statistics/statistics.rst
+   content/statistics/filter.rst
+   content/statistics/graph.rst 
+   content/statistics/scins.rst 
 
 .. toctree::
    :maxdepth: 2
