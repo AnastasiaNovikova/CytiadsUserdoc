@@ -62,6 +62,7 @@
   
    content/statistics/statistics.rst
    content/statistics/filter.rst
+   content/statistics/table.rst
    content/statistics/graph.rst 
    content/statistics/scins.rst 
 
