@@ -81,7 +81,7 @@
    :caption: Дополнительная информация
 
    content/known_issues/known_issues.rst
-   content/faq/faq_face.rst
+   content/faq/faq.rst
    content/agreements/agree.rst
 
 Термины и определения
