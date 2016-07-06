@@ -16,10 +16,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-  {% endblock %}
   
-<!-- GOOGLE-A -->
-   	// User Analytics Code
+  <!-- / GOOGLE-A -->
+  <script type="text/javascript">
+       	// User Analytics Code
 	_gaq.push(['user._setAccount', 'UA-76246843-1']);
 	_gaq.push(['user._trackPageview']);
 	// End User Analytics Code
@@ -32,7 +32,9 @@
 	})();
 	
 	// end RTD Analytics Code
-<!-- / GOOGLE-A -->
+  </script>
+  
+  {% endblock %}
   
   {# FAVICON #}
   {% if favicon %}
