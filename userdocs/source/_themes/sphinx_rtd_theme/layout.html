@@ -16,13 +16,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-  
   {% endblock %}
-  
+
   {# FAVICON #}
   {% if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
   {% endif %}
+
+  {# CSS #}
 
   {# OPENSEARCH #}
   {% if not embedded %}
@@ -31,6 +32,20 @@
     {% endif %}
 
   {% endif %}
+
+  {# RTD hosts this file, so just load on non RTD builds #}
+  {% if not READTHEDOCS %}
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+  {% endif %}
+
+  {% for cssfile in css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {% endfor %}
+
+  {% for cssfile in extra_css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+  {% endfor %}
+
   {%- block linktags %}
     {%- if hasdoc('about') %}
         <link rel="author" title="{{ _('About these documents') }}"
@@ -59,12 +74,95 @@
   {%- endblock %}
   {%- block extrahead %} {% endblock %}
 
-	<link rel="stylesheet" href="{{ pathto('_static/css/main.css', 1) }}" type="text/css" />
-	<!--<link rel="stylesheet" href="{{ pathto('_static/css/theme.css', 1) }}" type="text/css" />-->
+  {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
+  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
-	{# Keep modernizr in head - http://modernizr.com/docs/#installing #}
-	<script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-	<script type="text/javascript">
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  {% block extrabody %} {% endblock %}
+  <div class="wy-grid-for-nav">
+
+    {# SIDE NAV, TOGGLES ON MOBILE #}
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          {% block sidebartitle %}
+
+          {% if logo and theme_logo_only %}
+            <a href="{{ pathto(master_doc) }}">
+          {% else %}
+            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+          {% endif %}
+
+          {% if logo %}
+            {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
+            <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
+          {% endif %}
+          </a>
+
+          {% if theme_display_version %}
+            {%- set nav_version = version %}
+            {% if READTHEDOCS and current_version %}
+              {%- set nav_version = current_version %}
+            {% endif %}
+            {% if nav_version %}
+              <div class="version">
+                {{ nav_version }}
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% include "searchbox.html" %}
+
+          {% endblock %}
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          {% block menu %}
+            {% set toctree = toctree(maxdepth=4, collapse=theme_collapse_navigation, includehidden=True) %}
+            {% if toctree %}
+                {{ toctree }}
+            {% else %}
+                <!-- Local TOC -->
+                <div class="local-toc">{{ toc }}</div>
+            {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+      </nav>
+
+
+      {# PAGE CONTENT #}
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          {% include "breadcrumbs.html" %}
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            {% block body %}{% endblock %}
+           </div>
+          </div>
+          {% include "footer.html" %}
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  {% include "versions.html" %}
+
+  {% if not embedded %}
+
+    <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'{{ url_root }}',
             VERSION:'{{ release|e }}',
@@ -73,112 +171,27 @@
             HAS_SOURCE:  {{ has_source|lower }}
         };
     </script>
-	{%- for scriptfile in script_files %}
+    {%- for scriptfile in script_files %}
       <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endfor %}
-    
-     <!-- / GOOGLE-A -->
-  <script type="text/javascript">
-        var _gaq = _gaq || [];
-       	// User Analytics Code
-	_gaq.push(['user._setAccount', 'UA-76246843-2']);
-	_gaq.push(['user._trackPageview']);
-	// End User Analytics Code
-	
-	
-	(function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	
-	// end RTD Analytics Code
-  </script>
-    
-</head>
 
-<body role="document">
+  {% endif %}
 
-  <div class="header">
-  <a class="header__logo__link" href="{{ pathto(master_doc) }}"><img class="header__logo" src="{{ pathto('_static/images/cityads-logo.png', 1) }}" alt=""></a>
-    <div class="header__title">{{ project }}</div>
-    <div class="header__search">
-      <!-- <input class="header__search__input" type="text" placeholder="Search"> -->
-      {% include "searchbox.html" %}
-    </div>
-    <div class="header__tools">{% include "versions.html" %}</div>
-  </div>
-  <div class="menu wy-menu-vertical">
-  	<div class="wy-side-scroll">
-	    {% block menu %}
-	      {% set toctree = toctree(maxdepth=4, collapse=theme_collapse_navigation, includehidden=True) %}
-	      {% if toctree %}
-	        {{ toctree }}
-	      {% else %}>
-	        <div class="local-toc">{{ toc }}</div>
-	      {% endif %}
-	    {% endblock %}
-    	</div>
-  </div>
-  <div class="content">
-  	<div class="rst-content">
-  		<div class="content-top-shadow">
-	    		{% include "breadcrumbs.html" %}
-	    	</div>	
-		{% block body %}{% endblock %}
-	</div>
-	{% include "footer.html" %}
-    <!--
-    <div class="navigation-path">
-      <a href="" class="navigation-path__item">docs</a> | <span class="navigation-path__item">Добро пожаловать в документацию вебмастера</span>
-    </div>
-    <h1>Инструкция для быстрого старта</h1>
-  -->
-  </div>
-  {% block footer %}{% endblock %}
+  {# RTD hosts this file, so just load on non RTD builds #}
+  {% if not READTHEDOCS %}
+    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+  {% endif %}
+
+  {# STICKY NAVIGATION #}
+  {% if theme_sticky_navigation %}
   <script type="text/javascript">
       jQuery(function () {
-      	var content = document.querySelector('.content');
-      	var rstContent = content.querySelector('.rst-content');
-      	var elements;
-
-      	function reposition(){
-      		if(!elements){
-      			//.figure, .wy-table-responsive
-      			elements = Array.prototype.slice.call(content.querySelectorAll('.sidebar, .admonition'));
-      		}
-      		elements.forEach(function(item){
-			var offset = -(content.offsetWidth - rstContent.offsetWidth ) / 2;
-			if(~item.className.indexOf('figure') || ~item.className.indexOf('wy-table-responsive')){
-				item.style.cssText = 'margin-left: ' + offset + 'px; margin-right: ' + offset + 'px';
-			}else{
-				item.style.marginRight = offset + 'px';	
-			}
-		});
-      	}
-      	
-        function hashChange(){
-      		var hash = document.location.hash;
-      		var $root = $('html, body');
-      		$('.menu .current a').each(function(index, item){
-      		    var href = item.getAttribute('href');
-      		    var scrollTo = document.getElementById(hash.replace('#', ''));
-      		    $(item).toggleClass('current', href == hash);
-      		    if(scrollTo){
-      		    	setTimeout(function(){
-      		    		$root.scrollTop(scrollTo.offsetTop - 100);
-      		    	});
-      		    }
-      		});
-      	}
-      	
-        window.addEventListener("hashchange", hashChange);
-        //window.addEventListener('resize', reposition);
-        
-        hashChange();
-        //setTimeout(reposition);
-        SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.StickyNav.enable();
       });
   </script>
+  {% endif %}
+
+  {%- block footer %} {% endblock %}
+
 </body>
 </html>
