@@ -225,4 +225,4 @@
 
 Мы работаем над этим разделом. Скоро вы сможете его прочитать.
 
-.. |bracket| image: ../../img/account/finance/bracket.png
+.. |bracket| image:: ../../img/account/finance/bracket.png
