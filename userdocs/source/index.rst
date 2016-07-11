@@ -44,7 +44,7 @@
    :maxdepth: 2
    :caption: Аккаунт и счета
 
-   content/account/account_face.rst
+   content/account/account.rst
    content/account/finance.rst
    content/account/agent_cabinet.rst
    content/account/commission.rst
@@ -53,7 +53,7 @@
    :maxdepth: 2
    :caption: Работа с офферами
 
-   content/offers/offers_face.rst
+   content/offers/offers.rst
    content/offers/offers_interface.rst
 
 .. toctree::

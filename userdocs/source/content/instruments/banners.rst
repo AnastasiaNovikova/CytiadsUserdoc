@@ -1,4 +1,4 @@
-.. banners-label:
+.. _banners-label:
 
 ======
 Баннер
