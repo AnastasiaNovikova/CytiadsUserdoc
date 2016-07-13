@@ -2,8 +2,10 @@
 Конверсия
 =========
 
-Option+ - 
+Option+ - –
+
 Double --
+
 Shift Alt - —
 
 
