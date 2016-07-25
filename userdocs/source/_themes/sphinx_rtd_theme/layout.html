@@ -83,6 +83,12 @@
         _gaq.push(['user._setAccount', 'UA-76246843-2']);
         _gaq.push(['user._trackPageview']);
         // End User Analytics Code
+        
+        //page language
+        
+        if (window.location.pathname.split('/')[3] = 'ru') _gaq.push(['_setCustomVar', 1, 'language', 'ru', 3]);
+        if (window.location.pathname.split('/')[3] = 'en') _gaq.push(['_setCustomVar', 1, 'language', 'en', 3]);
+        
         (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
