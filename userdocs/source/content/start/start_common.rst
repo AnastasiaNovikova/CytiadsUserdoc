@@ -37,6 +37,7 @@
 
 .. image:: ../../img/start/cpa_cpi.png
    :width: 500 px
+   :align: center
    :alt: иерархическая структура сра
 
 CPS (англ. Cost Per Salе)
