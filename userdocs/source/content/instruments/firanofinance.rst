@@ -23,7 +23,7 @@
 
 Этот сервис проверяет данные, которые ему отправляют вебмастера, и передает заявки рекламодателям. 
 
-.. figure:: ../../img/instruments/firano/firano_process.png
+.. image:: ../../img/instruments/firano/firano_process.png
        :scale: 100 %
        :align: center
        :alt: Процесс работы Firano
@@ -66,7 +66,7 @@
    
       Бывает такое, что вебмастер выбрал НекийБанк в качестве оффера, с которым хотел бы работать, но посетитель не заполнил поле, которое требуется этому банку. В этом случае заявка до НекогоБанка не дойдет.  
           
-      .. figure:: ../../img/instruments/firano/firano_offers.png
+      .. image:: ../../img/instruments/firano/firano_offers.png
           :scale: 75 %
           :align: center
           :alt: как Firano выберает офферы
@@ -100,7 +100,7 @@
 #. Нажмите на кнопку :guilabel:`Сохранить и получить код`. 
 #. В окне **Код для вставки** в переменной ``$queryParams``:
     
-   .. figure:: ../../img/instruments/firano/firano_id_token.png
+   .. image:: ../../img/instruments/firano/firano_id_token.png
       :scale: 100 %
       :align: center
       :alt: код для вставки Firano
