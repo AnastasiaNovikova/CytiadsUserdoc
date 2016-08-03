@@ -131,6 +131,7 @@
 * `ЯндексДеньги <https://money.yandex.ru/doc.xml?id=523014>`_
 * `WebMoney <https://wiki.webmoney.ru/projects/webmoney/wiki/Финансовые_ограничения_(лимиты)_WebMoney_Keeper_Standard>`_
 * `PayPal <https://www.paypal.com/selfhelp/article/FAQ690/9>`_
+* `Capitalist <https://capitalist.net/fees>`_
 
 .. _payment-status-label:
 
